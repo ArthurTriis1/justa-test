@@ -29,10 +29,6 @@ const MoviePage: React.FC = () => {
         })()
     }, [id])
 
-    useEffect(() => {
-        console.log('moviedata', movieData)
-    }, [movieData])
-
     return (
         <S.MovieMain>
             <S.MovieWrapper>

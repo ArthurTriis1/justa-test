@@ -33,6 +33,6 @@ export const HomeTitle = styled.h1`
     margin-bottom: 10px;
 
     @media(max-width: 600px) {
-        font-size: 35px;
+        font-size: 25px;
     }
 `

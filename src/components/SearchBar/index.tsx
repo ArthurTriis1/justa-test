@@ -20,10 +20,7 @@ const SearchBar: React.FC<ISearchBar> = ({  change, moviesSearch, movieClicked }
             <S.SearchBarWrapper>
                 <S.SearchInput 
                     ref={searchInputRef}
-                    onChange={e => {
-                        console.log(searchInputRef.current?.value);
-                        change(e.target.value)
-                    }}
+                    onChange={e => change(e.target.value)}
                     type="text"
                     placeholder="Pesquisar..."/>
                 <S.SearchButton>
