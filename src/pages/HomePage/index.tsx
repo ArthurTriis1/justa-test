@@ -9,11 +9,13 @@ const Home: React.FC = () => {
     
     const [ searchReturn, setSearchReturn ] = useState<IMovieSearch[]>([]);
     const [ search, setSearch ] = useState('');
+    const [ loading, setLoading ] = useState(false);
     const history = useHistory();
 
     useEffect(() => {
         if(search){
             (async () => {
+                setLoading(true)
                 const { data : { results } } = await apiTMDB.get("/search/movie", {
                     params: {
                         api_key:  process.env.REACT_APP_TMDB_KEY,
@@ -23,6 +25,7 @@ const Home: React.FC = () => {
                 })
                 const tempTrending = results.slice(0, 6);
                 setSearchReturn(tempTrending);
+                setLoading(false)
             })()
         }else{
             setSearchReturn([]);
@@ -41,6 +44,7 @@ const Home: React.FC = () => {
                     moviesSearch={searchReturn}
                     change={e => setSearch(e)}
                     movieClicked={id => goToMoviePage(id)}
+                    loading={loading}
                 ></SearchBar>
             </S.HomeContainer>
         </S.HomeMain>

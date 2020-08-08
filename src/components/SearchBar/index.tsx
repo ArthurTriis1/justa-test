@@ -3,15 +3,18 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { IoMdSad } from 'react-icons/io';
 import IMovieSearch from '../../typescript/IMovieSearch';
 import MovieSearchSpan from '../MovieSearchSpan';
+import ReactLoading from "react-loading";
+
 import * as S from './styles';
 
 interface ISearchBar {
     change: (input: string) => void;
     moviesSearch: IMovieSearch[];
     movieClicked: (input: number) => void;
+    loading: boolean;
 }
 
-const SearchBar: React.FC<ISearchBar> = ({  change, moviesSearch, movieClicked }) => {
+const SearchBar: React.FC<ISearchBar> = ({  change, moviesSearch, movieClicked, loading }) => {
     
     const searchInputRef = useRef<HTMLInputElement>(null);
     
@@ -29,7 +32,7 @@ const SearchBar: React.FC<ISearchBar> = ({  change, moviesSearch, movieClicked }
             </S.SearchBarWrapper>
             <S.MovieSearchContainer>
                 {
-                    Boolean(moviesSearch.length) &&
+                    Boolean(moviesSearch.length) && !loading &&
                     moviesSearch.map(movie => (
                         <MovieSearchSpan 
                             key={movie.id}
@@ -40,10 +43,16 @@ const SearchBar: React.FC<ISearchBar> = ({  change, moviesSearch, movieClicked }
                 }
 
                 {
-                    !moviesSearch.length && searchInputRef.current?.value &&
+                    !moviesSearch.length && searchInputRef.current?.value && !loading &&
                     <S.SadMessage>
                         Nenhum Filme encontrado 
                         <IoMdSad size={30}/>
+                    </S.SadMessage>
+                }
+                {
+                    loading &&
+                    <S.SadMessage>
+                        <ReactLoading type="bubbles" color="#fff" />
                     </S.SadMessage>
                 }
             </S.MovieSearchContainer>
