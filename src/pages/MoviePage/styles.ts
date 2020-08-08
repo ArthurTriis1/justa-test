@@ -95,13 +95,14 @@ export const Sinopse = styled.p`
 export const GenresWrapper = styled.section`
     
     margin-top: 30px;
-    padding: 10px 0px;
+    /* padding: 10px 0px; */
     width: 100%;
     height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
     max-width: 80%;
+    overflow-x: scroll;
 
     h3{
         color: #1d6d8a;
