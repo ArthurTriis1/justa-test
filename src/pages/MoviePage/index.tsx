@@ -14,6 +14,7 @@ const MoviePage: React.FC = () => {
         poster_path: '',
         release_date: '',
         title: '',
+        id: 0
     })
 
     useEffect(() => {
