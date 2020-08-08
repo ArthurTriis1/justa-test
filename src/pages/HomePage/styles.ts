@@ -32,6 +32,22 @@ export const HomeTitle = styled.h1`
     font-size: 50px;
     color: #FFF;
     margin-bottom: 10px;
+    
+    @keyframes blink {
+        50% {
+            opacity: 0.0;
+        }
+    }
+    @-webkit-keyframes blink {
+        50% {
+            opacity: 0.0;
+        }
+    }
+
+    span {
+        animation: blink 1s step-start 0s infinite;
+        -webkit-animation: blink 1.5s step-start 0s infinite;
+    }
 
     @media(max-width: 600px) {
         font-size: 25px;

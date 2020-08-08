@@ -36,7 +36,7 @@ const Home: React.FC = () => {
     return (
         <S.HomeMain>
             <S.HomeContainer>
-                <S.HomeTitle>Procure por um filme_</S.HomeTitle>
+                <S.HomeTitle>Procure por um filme<span>_</span></S.HomeTitle>
                 <SearchBar 
                     moviesSearch={searchReturn}
                     change={e => setSearch(e)}
