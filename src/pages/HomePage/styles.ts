@@ -2,20 +2,21 @@ import styled from 'styled-components';
 import backgroundImage from '../../assets/banner.png';
 
 export const HomeMain = styled.main`
-    height: calc(100% - 72px);
+    min-height: calc(100vh - 72px);
+    height: max-content;
     width: 100vw;
     background-image: url(${backgroundImage});
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
 `
 
 export const HomeContainer = styled.div`
     width: 60%;
     height: 100%;
+    padding-top: 50px;
     display: flex;
-    padding-top: 100px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;

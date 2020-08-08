@@ -48,7 +48,7 @@ export const SearchButton = styled.button`
 export const MovieSearchContainer = styled.div`
     width: 80%;
     background-color: #FFF;
-    max-height: 45vh;
+    max-height: 50vh;
     overflow-y: scroll;
     border-radius: 0 0 10px 10px;
     overflow-x: hidden;

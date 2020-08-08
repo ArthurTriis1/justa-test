@@ -94,7 +94,7 @@ export const Sinopse = styled.p`
 
 export const GenresWrapper = styled.section`
     
-    margin-top: 30px;
+    margin: 30px 0;
     /* padding: 10px 0px; */
     width: 100%;
     height: 50px;
@@ -111,10 +111,10 @@ export const GenresWrapper = styled.section`
 `
 
 export const Genre = styled.span`
-    background: #1d6d8a;
+    background: #ccc;
     padding: 5px 20px;
     margin: 0 5px;
-    color: #FFF;
+    color: #5f5f5f;
     font-weight: 500;
-    border-radius: 8px;
+    white-space: nowrap;
 `
