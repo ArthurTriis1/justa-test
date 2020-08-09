@@ -18,7 +18,7 @@ export default createGlobalStyle`
         background: #fFF;
         font-size: 14px;
         height: 100%;
-        width: calc(100vw - 5px);
+        width: 100%;
     }
 
     ul{
@@ -32,7 +32,7 @@ export default createGlobalStyle`
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: #F4F5F7; 
+        background: #FFF0; 
     }
     
     /* Handle */

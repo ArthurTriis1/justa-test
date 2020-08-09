@@ -6,9 +6,11 @@ const Footer: React.FC = () => {
     return (
         <S.Footer>
             <h3>
-                Projeto desenvolvido por Arthur Andrade | 
+                Desenvolvido por Arthur Andrade  
+                <br/>
+
+                <a href="https://arthurandrade.netlify.app/" target="__blank"> Conheça mais trabalhos</a>
             </h3>
-            <a href="https://arthurandrade.netlify.app/" target="__blank"> Conheça mais trabalhos</a>
         </S.Footer>
     )
 }
