@@ -27,7 +27,7 @@ const MovieSearchSpan: React.FC<IMovieSearchSpan> = ( { movie, click } ) => {
         >
             {
                 Boolean(poster_path) ?
-                <S.MovieSearchImage backgroundImage={`https://image.tmdb.org/t/p/w200${poster_path}`}/> :
+                <S.MovieSearchImage backgroundImage={`${process.env.REACT_APP_TMDB_IMAGE_URL}w200${poster_path}`}/> :
                 <S.MovieSearchImage backgroundImage={notFoundImage}/>
             }
             
