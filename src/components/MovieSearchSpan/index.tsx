@@ -2,6 +2,7 @@ import React from 'react';
 import IMovieSearch from '../../typescript/IMovieSearch';
 import notFoundImage from '../../assets/imageNotFound.webp'
 import * as S from './styles';
+import { formatDate } from '../../utils/formatDate';
 
 interface IMovieSearchSpan {
     click: (id: number) => void;
@@ -18,9 +19,12 @@ const MovieSearchSpan: React.FC<IMovieSearchSpan> = ( { movie, click } ) => {
         poster_path 
     } = movie;
 
-    const dateRelease = `${release_date?.split("-")[2]}/${release_date?.split("-")[1]}/${release_date?.split("-")[0]}`
+    const dateRelease = formatDate(release_date)
     return (
-        <S.MovieSearchSpanWrapper onClick={() => click(id)}>
+        <S.MovieSearchSpanWrapper 
+            onClick={() => click(id)}
+            data-testid='movieSearchSpan'
+        >
             {
                 Boolean(poster_path) ?
                 <S.MovieSearchImage backgroundImage={`https://image.tmdb.org/t/p/w200${poster_path}`}/> :

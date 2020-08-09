@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import IMovie from '../../typescript/IMovie';
 import apiTMDB from '../../services/apiTMDB';
 import { AiFillStar } from 'react-icons/ai'
 import * as S from './styles';
 
 const MoviePage: React.FC = () => {
-    const { id }= useParams()
+    const { id }= useParams();
+
+    const history = useHistory();
 
     const [movieData, setMovieData] = useState<IMovie>({
         original_title: '',
@@ -19,15 +21,19 @@ const MoviePage: React.FC = () => {
 
     useEffect(() => {
         (async () => {
-            const { data } = await apiTMDB.get(`/movie/${id}`, {
-                params: {
-                    api_key:  process.env.REACT_APP_TMDB_KEY,
-                    language: "pt-BR",
-                }
-            })
-            setMovieData(data);
+            try{
+                const { data } = await apiTMDB.get(`/movie/${id}`, {
+                    params: {
+                        api_key:  process.env.REACT_APP_TMDB_KEY,
+                        language: "pt-BR",
+                    }
+                })
+                setMovieData(data);
+            }catch(err){
+                history.push('/')
+            }
         })()
-    }, [id])
+    }, [id, history])
 
     return (
         <S.MovieMain>

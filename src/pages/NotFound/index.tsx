@@ -1,9 +1,18 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import * as S from './styles';
 
 const NotFound: React.FC = () => {
-  return <h1>404</h1>;
+    return (
+        <S.NotFoundMain>
+            <h1>
+                404
+            </h1>
+            <h3>
+                Xô! Não tem nada aqui!
+            </h3>
+        </S.NotFoundMain>
+    )
 }
 
 export default NotFound;

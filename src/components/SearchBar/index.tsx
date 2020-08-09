@@ -12,9 +12,17 @@ interface ISearchBar {
     moviesSearch: IMovieSearch[];
     movieClicked: (input: number) => void;
     loading: boolean;
+    withOutNetwork?: boolean;
 }
 
-const SearchBar: React.FC<ISearchBar> = ({  change, moviesSearch, movieClicked, loading }) => {
+const SearchBar: React.FC<ISearchBar> = (
+    {  
+        change, 
+        moviesSearch, 
+        movieClicked, 
+        loading, 
+        withOutNetwork = false, 
+    }) => {
     
     const searchInputRef = useRef<HTMLInputElement>(null);
     
@@ -22,6 +30,7 @@ const SearchBar: React.FC<ISearchBar> = ({  change, moviesSearch, movieClicked, 
         <S.SearchContainer>
             <S.SearchBarWrapper>
                 <S.SearchInput 
+                    data-testid="searchInput"
                     ref={searchInputRef}
                     onChange={e => change(e.target.value)}
                     type="text"
@@ -41,16 +50,25 @@ const SearchBar: React.FC<ISearchBar> = ({  change, moviesSearch, movieClicked, 
                         />
                     ))
                 }
+                {
+                    withOutNetwork &&
+                    <S.SadMessage
+                        data-testid="networkWithoutNetwork"
+                    >
+                        Parece que você está sem internet
+                        <IoMdSad size={30}/>
+                    </S.SadMessage>
+                }
 
                 {
-                    !moviesSearch.length && searchInputRef.current?.value && !loading &&
+                    !moviesSearch.length && searchInputRef.current?.value && !loading && !withOutNetwork &&
                     <S.SadMessage>
                         Nenhum Filme encontrado 
                         <IoMdSad size={30}/>
                     </S.SadMessage>
                 }
                 {
-                    loading &&
+                    loading && !withOutNetwork &&
                     <S.SadMessage>
                         <ReactLoading type="bubbles" color="#fff" />
                     </S.SadMessage>
