@@ -6,7 +6,7 @@ export const ImageContainerWrapper = styled.section`
     display: flex;
     flex-direction: column;
     color: #1d6d8a;
-    overflow-x: visible;
+    
     
 
     h3 {
@@ -25,7 +25,6 @@ export const ListImageContainer = styled.div`
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: nowrap;
-
     overflow-x: scroll;
 
 `

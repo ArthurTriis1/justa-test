@@ -9,7 +9,7 @@ const NotFound: React.FC = () => {
                 404
             </h1>
             <h3>
-                Xô! Não tem nada aqui!
+                Não tem nada aqui!
             </h3>
         </S.NotFoundMain>
     )

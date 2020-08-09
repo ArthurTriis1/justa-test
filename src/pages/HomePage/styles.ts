@@ -4,7 +4,7 @@ import backgroundImage from '../../assets/banner.png';
 export const HomeMain = styled.main`
     min-height: calc(100vh - 72px);
     height: max-content;
-    width: 100vw;
+    width: 100%;
     background-image: url(${backgroundImage});
     display: flex;
     align-items: center;

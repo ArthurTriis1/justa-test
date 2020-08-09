@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const HeaderWrapper = styled.header`
+    
+    
     display: flex;
     height: 72px;
     width: 100%;
@@ -12,6 +14,20 @@ export const HeaderWrapper = styled.header`
 `
 
 export const HeaderLogo = styled.h1`
+
+    @keyframes enter {
+        from{
+            letter-spacing: 30px;
+            opacity: 0;
+            transform: scale(3);
+        }
+
+        to{
+            letter-spacing: 10px;
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
     color: #FFF;
     font-size: 45px;
     letter-spacing: 10px;
@@ -22,6 +38,8 @@ export const HeaderLogo = styled.h1`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; 
+    animation: enter;
+    animation-duration: 1s; 
 
     @media(max-width: 600px){
         font-size: 30px;
@@ -40,4 +58,10 @@ export const BackButton = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: all 0.3s ease-in;
+
+    &:hover {
+        transform: scale(1.2)
+    }
 `

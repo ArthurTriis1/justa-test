@@ -5,11 +5,11 @@ interface IImage{
 }
 
 export const MovieMain = styled.main`
-    width: 100vw;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(to bottom, rgba(36,104,128,1) 0, rgba(36,104,128,1) 130px, rgba(40,41,45,0)  130px);
+    
     @media(max-width: 780px){
         background-image: linear-gradient(to bottom, rgba(36,104,128,1) 0, rgba(36,104,128,1) 200px, rgba(40,41,45,0)  200px);
     }
@@ -47,10 +47,10 @@ export const InfoWrapper = styled.div`
     min-width: 200px;
     color: #FFF;
     margin-left: 30px;
+        color: rgba(36,104,128,1) ;
 
     @media(max-width: 780px){
         margin-top: 50px;
-        color: #3C3B3B;
         margin-left: 0px;
         max-width: 80%;
     }
@@ -66,6 +66,7 @@ export const InfoWrapper = styled.div`
             font-size: 15px;
             line-height: 136.69%;
             margin-left: 10px;
+            
         }
     }
 
@@ -75,6 +76,10 @@ export const InfoWrapper = styled.div`
         font-weight: normal;
         font-size: 18px;
         line-height: 136.69%;
+
+        i{
+            font-size: 12px;
+        }
     }
 
     svg{
@@ -84,7 +89,7 @@ export const InfoWrapper = styled.div`
 `
 
 export const Sinopse = styled.p`
-    margin-top: 40px;
+    margin-top: 30px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -146,16 +151,17 @@ export const ImageOfGalery = styled.img`
 `
 
 export const SimilarMovie = styled(Actor)`
+
     img{
         transition: all 0.3s ease-in;
+        
     }
    
     &:hover {
         cursor: pointer;
 
         img {
-            transform: scale(1.2);
-            z-index: 1000;
+            transform: scale(1.1);
         }
     }
 `

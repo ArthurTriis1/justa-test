@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import backgroundImage from '../../assets/banner.png';
 
 export const NotFoundMain = styled.main`
-    min-height: calc(100vh - 72px);
-    height: max-content;
-    width: 100vw;
+
+    height: 100%;
+    width: 100%;
     background-image: url(${backgroundImage});
     display: flex;
     align-items: center;

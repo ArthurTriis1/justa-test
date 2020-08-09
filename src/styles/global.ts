@@ -18,6 +18,7 @@ export default createGlobalStyle`
         background: #fFF;
         font-size: 14px;
         height: 100%;
+        width: calc(100vw - 5px);
     }
 
     ul{

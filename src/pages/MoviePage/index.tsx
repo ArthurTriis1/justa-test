@@ -109,22 +109,25 @@ const MoviePage: React.FC = () => {
                 }
                 <S.InfoWrapper>
                     <h1>{movieData.title}<span>{movieData.release_date.split('-')[0]}</span></h1>
-                    <span>{movieData.original_title}</span>
-                    <span> Avaliação: {movieData.vote_average} <AiFillStar size={20}/> </span>
+                    <span>{movieData.original_title} </span>
+                    <span> Avaliação: {movieData.vote_average} <i>/10</i>  <AiFillStar size={20}/> </span>
                     <S.Sinopse>
                         {movieData.overview}
                     </S.Sinopse>
                 </S.InfoWrapper>
                 <S.AditionalInfosWrapper>
-                    <ImagesContainer title="Gêneros">
-                        {
-                            movieData?.genres?.map(genre => (
-                                <S.Genre key={genre.id}>
-                                    {genre.name}
-                                </S.Genre>
-                            ))
-                        }
-                    </ImagesContainer>
+                    {
+                        !!movieData?.genres?.length &&
+                        <ImagesContainer title="Gêneros">
+                            {
+                                movieData?.genres?.map(genre => (
+                                    <S.Genre key={genre.id}>
+                                        {genre.name}
+                                    </S.Genre>
+                                ))
+                            }
+                        </ImagesContainer>
+                    }
                     {
                         !!casts.length &&
                         <ImagesContainer title="Casting">
