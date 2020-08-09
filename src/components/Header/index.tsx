@@ -1,22 +1,20 @@
-import React, { useState, useLayoutEffect } from 'react';
+import React from 'react';
 import { useRouteMatch } from 'react-router-dom'
 import * as S from './styles';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
-const Header: React.FC = (props) => {
+const Header: React.FC = () => {
     
-    const match = useRouteMatch("/");
-    const [showBack, setShowBack] = useState(!(window.location.pathname === '/'))
-
-    useLayoutEffect(() => {
-        setShowBack(!(window.location.pathname === '/'));
-    }, [match])
+    const match = useRouteMatch('/');
 
     return (
         <S.HeaderWrapper>
                 {
-                    showBack &&
-                    <S.BackButton to='/'>
+                    !match?.isExact &&
+                    <S.BackButton 
+                        data-testid='back-link'
+                        to='/'
+                    >
                             <AiOutlineArrowLeft size={30}/>
                     </S.BackButton>
                 }
