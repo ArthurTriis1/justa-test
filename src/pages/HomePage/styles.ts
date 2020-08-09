@@ -50,6 +50,6 @@ export const HomeTitle = styled.h1`
     }
 
     @media(max-width: 600px) {
-        font-size: 25px;
+        font-size: 38px;
     }
 `

@@ -27,11 +27,11 @@ const Home: React.FC = () => {
                             query: search
                         }
                     })
-                    const tempTrending = results.slice(0, 6);
+                    const tempTrending = results.slice(0, 10);
                     setSearchReturn(tempTrending);
                     setLoading(false)
                 }catch(err){
-                    console.log(err);
+                    //console.log(err);
                     setWithOutNetwork(true);
                 }
             })()

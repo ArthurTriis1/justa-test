@@ -70,6 +70,7 @@ export const SadMessage = styled.h1`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 20px;
     
 
