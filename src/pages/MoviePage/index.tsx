@@ -28,12 +28,14 @@ const MoviePage: React.FC = () => {
                         language: "pt-BR",
                     }
                 })
+
                 setMovieData(data);
             }catch(err){
                 history.push('/')
             }
         })()
     }, [id, history])
+
 
     return (
         <S.MovieMain>
