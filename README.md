@@ -24,3 +24,9 @@ Gerar o build com:
 Executar os testes com:
 
 `yarn test`
+
+# ...
+
+Para mais projetos e informações acesse:
+
+http://arthurandrade.netlify.app/
