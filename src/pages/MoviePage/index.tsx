@@ -152,7 +152,7 @@ const MoviePage: React.FC = () => {
                     }
                     {
                         !!galery.length &&
-                        <ImagesContainer title="Galery">
+                        <ImagesContainer title="Galeria">
                             {
                                 galery.map((image_path, id) => (
                                     <S.ImageOfGalery 
@@ -165,7 +165,7 @@ const MoviePage: React.FC = () => {
                     }
                     {
                         !!similarMovies.length &&
-                        <ImagesContainer title="Talvez você também possa gostar">
+                        <ImagesContainer title="Clique e conheça filmes similares">
                         {
                                 similarMovies.map(movie => (
                                     <S.SimilarMovie 

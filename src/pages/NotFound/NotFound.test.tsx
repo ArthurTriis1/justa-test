@@ -8,12 +8,12 @@ import  Routes  from '../../routes';
 test('landing on a bad page shows 404 page', () => {
     const history = createMemoryHistory()
     history.push('/randompage')
-    const { getByText } = render(
+    const { getByTestId } = render(
       <Router history={history}>
         <Routes />
       </Router>
     )
 
-    const dateElement = getByText(/Xô! Não tem nada aqui!/i);
+    const dateElement = getByTestId('404-message');
     expect(dateElement).toBeInTheDocument();
 })

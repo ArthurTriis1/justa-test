@@ -26,19 +26,19 @@ export default createGlobalStyle`
     }
 
     ::-webkit-scrollbar {
-        width: 5px;
-        height: 5px;
+        width: 10px;
+        height: 10px;
     }
 
     /* Track */
     ::-webkit-scrollbar-track {
-        background: #FFF0; 
+        background: #F0F0F0; 
     }
     
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: #cfcfcf; 
-        border-radius: 5px;
+        border-radius: 10px;
     }
 
     /* Handle on hover */
