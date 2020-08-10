@@ -18,7 +18,7 @@ export const SearchInput = styled.input`
     padding: 5px 25px;
     font-family: Roboto;
     font-style: normal;
-    font-weight: 300g;
+    font-weight: 300;
     font-size: 20px;
     line-height: 16px;
     letter-spacing: 0.06em;
