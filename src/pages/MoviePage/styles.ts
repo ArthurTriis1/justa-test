@@ -101,7 +101,7 @@ export const Sinopse = styled.p`
 export const Genre = styled.span`
     background: #ccc;
     padding: 5px 20px;
-    margin: 0 5px;
+    margin: 0 5px 10px 0;
     color: #5f5f5f;
     font-weight: 500;
     white-space: nowrap;
